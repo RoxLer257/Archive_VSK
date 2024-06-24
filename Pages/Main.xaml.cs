@@ -136,7 +136,7 @@ namespace ArchiveVSK.Pages
             }
         }
 
-        private void OSAGO_Click(object sender, RoutedEventArgs e)
+        private void Osago_Click(object sender, RoutedEventArgs e)
         {
             var context = ArchiveVSKEntities.GetContext();
             if(currentFilter == "ОСАГО")
@@ -151,7 +151,7 @@ namespace ArchiveVSK.Pages
             }
         }
 
-        private void KASKO_Click(object sender, RoutedEventArgs e)
+        private void Kasko_Click(object sender, RoutedEventArgs e)
         {
             var context = ArchiveVSKEntities.GetContext();
             if (currentFilter == "КАСКО")

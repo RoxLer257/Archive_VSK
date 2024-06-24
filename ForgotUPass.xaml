@@ -29,7 +29,8 @@
                 </Grid>
                 <TextBlock Margin="5 5 0 0" Foreground="Gray" IsHitTestVisible="False" VerticalAlignment="Center"
                                    Panel.ZIndex="1" Text="Введите логин" Height="22" FontSize="14"
-                                   Visibility="{Binding ElementName=NumPol, Path=Text.IsEmpty, Converter={StaticResource BoolToVis}}"/>
+                                   Visibility="{Binding ElementName=NumPol, 
+                    Path=Text.IsEmpty, Converter={StaticResource BoolToVis}}"/>
                 <TextBox Name="NumPol" Width="200" Margin="3,5,0,0" 
                                  Text="{Binding PolicyNumber}" FontSize="14"
                                  Height="25" VerticalAlignment="Center"/>
@@ -42,7 +43,8 @@
             </Grid>
 
             <Grid Grid.Row="1">
-                <TextBlock Text="Ваш пароль: " Margin="3 5 0 0" VerticalAlignment="Center"/>
+                <TextBlock Text="Ваш пароль: " Margin="3 5 0 0" 
+                           VerticalAlignment="Center"/>
                 <TextBox HorizontalAlignment="Right" Margin="3 5 10 0"
                          Name="Password"
                          Width="200" Height="25" Text="{Binding Password}"/>

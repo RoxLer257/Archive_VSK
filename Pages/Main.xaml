@@ -32,15 +32,16 @@
                         <ColumnDefinition Width="*" MinWidth="300"/>
                     </Grid.ColumnDefinitions>
 
-                    <StackPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" 
+                    <StackPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"
                             HorizontalAlignment="Right" Orientation="Horizontal">
                         <Button x:Name="PersonalAcc" Click="PersonalAcc_Click"
-                            Margin="10 0 10 10"
-                            Style="{StaticResource AccBtn}">
+                            Margin="10 0 10 10" Style="{StaticResource AccBtn}">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding Source={x:Static local:CurrentUser.Username}}" VerticalAlignment="Center" HorizontalAlignment="Center"
-                                       Margin="10 0 10 0"/>
-                                <Icon:PackIconMaterial Kind="Account" Style="{StaticResource IconMain}"
+                                <TextBlock Text="{Binding Source={x:Static local:CurrentUser.Username}}" 
+                                       VerticalAlignment="Center" 
+                                       HorizontalAlignment="Center" Margin="10 0 10 0"/>
+                                <Icon:PackIconMaterial Kind="Account" 
+                                                   Style="{StaticResource IconMain}" 
                                                    HorizontalAlignment="Right"/>
                             </StackPanel>
                         </Button>
@@ -48,21 +49,26 @@
                         <Button x:Name="ExtAcc" Click="ExtAcc_Click"
                             Margin="10 0 10 10" Style="{StaticResource AccBtn}">
                             <StackPanel Orientation="Horizontal">
-                                <Icon:PackIconMaterial Kind="ExitToApp" Style="{StaticResource IconMain}"/>
+                                <Icon:PackIconMaterial Kind="ExitToApp" 
+                                                   Style="{StaticResource IconMain}"/>
                             </StackPanel>
                         </Button>
                     </StackPanel>
 
                     <Grid>
                         <Grid Width="300" HorizontalAlignment="Right">
-                            <TextBlock Margin="20 0" VerticalAlignment="Center" Foreground="#b0b9c6"
-                               IsHitTestVisible="False" Panel.ZIndex="1" Text="Поиск полиса по фамилии"
-                               Visibility="{Binding ElementName=Search, Path=Text.IsEmpty, Converter={StaticResource BoolToVis}}"/>
-                            <TextBox x:Name="Search" Style="{StaticResource textboxSearch}"
-                             TextChanged="Search_TextChanged"/>
+                            <TextBlock Margin="20 0" VerticalAlignment="Center" 
+                                   Foreground="#b0b9c6" IsHitTestVisible="False" 
+                                   Panel.ZIndex="1" Text="Поиск полиса по фамилии"
+                                   Visibility="{Binding ElementName=Search, 
+                                   Path=Text.IsEmpty, 
+                                   Converter={StaticResource BoolToVis}}"/>
+                            <TextBox x:Name="Search" Style="{StaticResource TextboxSearch}"
+                                 TextChanged="Search_TextChanged"/>
                             <Icon:PackIconMaterial Kind="Magnify" Width="15" Height="15"
-                                           VerticalAlignment="Center" HorizontalAlignment="Right"
-                                           Margin="0 0 15 0" Foreground="#b0b9c6"/>
+                                               VerticalAlignment="Center" 
+                                               HorizontalAlignment="Right" Margin="0 0 15 0" 
+                                               Foreground="#b0b9c6"/>
                         </Grid>
                     </Grid>
                 </Grid>
@@ -86,7 +92,7 @@
                                         Binding="{Binding Cars.Brands.BrandName}"
                                         ElementStyle="{StaticResource WrapText}"
                                         Width="*"/>
-                        <DataGridTextColumn Header="Модель" 
+                        <DataGridTextColumn Header="Модель"
                                         Binding="{Binding Cars.CarModels.ModelName}"
                                         ElementStyle="{StaticResource WrapText}"
                                         Width="*"/>
@@ -97,10 +103,13 @@
                         <DataGridTemplateColumn Header="Редактировать" Width="*">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button x:Name="EditPolicy" Command="{Binding DataContext.EditPolicyCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" CommandParameter="{Binding}">
+                                    <Button x:Name="EditPolicy" Command="{Binding DataContext.EditPolicyCommand, 
+                                        RelativeSource={RelativeSource AncestorType=DataGrid}}" 
+                                        CommandParameter="{Binding}">
                                         <StackPanel Orientation="Horizontal">
                                             <TextBlock Text="Редактировать"/>
-                                            <Icon:PackIconMaterial Kind="TextBoxEdit" Style="{StaticResource IconMain}"/>
+                                            <Icon:PackIconMaterial Kind="TextBoxEdit" 
+                                                               Style="{StaticResource IconMain}"/>
                                         </StackPanel>
                                     </Button>
                                 </DataTemplate>
@@ -120,42 +129,47 @@
                 <StackPanel Grid.Row="0" Margin="5 20 0 10" HorizontalAlignment="Left">
                     <StackPanel Orientation="Horizontal">
                         <StackPanel>
-                            <Expander Template="{DynamicResource ExpanderTemplate1}" Header="Договоры" Style="{StaticResource Exp}">
+                            <Expander Template="{DynamicResource ExpanderTemplate1}" 
+                                  Header="Договоры" Style="{StaticResource Exp}">
                                 <StackPanel Margin="5">
-                                    <Button Content="Договоры ОСАГО" 
-                                            Name="OSAGO" Click="OSAGO_Click"
-                                            Style="{StaticResource AccBtn}"/>
-                                    <Button Content="Договоры КАСКО" 
-                                            Name="KASKO" Click="KASKO_Click"
-                                            Style="{StaticResource AccBtn}"/>
-                                    <Button Content="Составить договор" Style="{StaticResource AccBtn}" Name="AddPolicy"
-                                            Click="AddPolicy_Click"/>
-                                    <Button Content="Удалить полисы" Style="{StaticResource AccBtn}" x:Name="DelPol"
-                                            Click="DelPol_Click"/>
+                                    <Button Content="Договоры ОСАГО" Name="Osago" 
+                                        Click="Osago_Click" Style="{StaticResource AccBtn}"/>
+                                    <Button Content="Договоры КАСКО" Name="Kasko" 
+                                        Click="Kasko_Click" Style="{StaticResource AccBtn}"/>
+                                    <Button Content="Составить договор" 
+                                        Style="{StaticResource AccBtn}" 
+                                        Name="AddPolicy" Click="AddPolicy_Click"/>
+                                    <Button Content="Удалить полисы" 
+                                        Style="{StaticResource AccBtn}" 
+                                        x:Name="DelPol" Click="DelPol_Click"/>
                                 </StackPanel>
                             </Expander>
                         </StackPanel>
                         <StackPanel>
-                            <Icon:PackIconMaterial Kind="BriefcaseOutline" Style="{StaticResource IconMain}"/>
+                            <Icon:PackIconMaterial Kind="BriefcaseOutline" 
+                                               Style="{StaticResource IconMain}"/>
                         </StackPanel>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" Name="Statistika">
                         <StackPanel>
-                            <Expander Header="Отчеты" Template="{DynamicResource ExpanderTemplate1}" Style="{StaticResource Exp}">
+                            <Expander Header="Отчеты" Template="{DynamicResource ExpanderTemplate1}" 
+                                  Style="{StaticResource Exp}">
                                 <StackPanel Margin="5">
-                                    <Button Content="Общая статистика" 
-                                            Name="Static" Click="Static_Click"
-                                            Style="{StaticResource AccBtn}"/>
+                                    <Button Content="Общая статистика" Name="Static" 
+                                        Click="Static_Click" 
+                                        Style="{StaticResource AccBtn}"/>
                                 </StackPanel>
                             </Expander>
                         </StackPanel>
                         <StackPanel HorizontalAlignment="Left">
-                            <Icon:PackIconMaterial Kind="Printer" Style="{StaticResource IconMain}"/>
+                            <Icon:PackIconMaterial Kind="Printer" 
+                                               Style="{StaticResource IconMain}"/>
                         </StackPanel>
                     </StackPanel>
                 </StackPanel>
             </Grid>
         </Grid>
     </Border>
+
 </Page>

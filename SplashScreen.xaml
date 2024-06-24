@@ -21,7 +21,7 @@
                 <TextBlock Text="Загрузка приложения..." FontSize="17"
                        Margin="50 -30 0 15"
                        FontWeight="SemiBold"/>
-                <ProgressBar x:Name="progressBar" Value="0" Height="5" Width="360"
+                <ProgressBar x:Name="ProgressBar" Value="0" Height="5" Width="360"
                              IsIndeterminate="True"
                              Margin="50 -30"
                              HorizontalAlignment="Left"/>

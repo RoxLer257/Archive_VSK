@@ -18,8 +18,8 @@ namespace ArchiveVSK.Pages
 
         private void BtnEnter_Click(object sender, RoutedEventArgs e)
         {
-            string login = txtLogin.Text;
-            string password = txtpass.Password;
+            string login = TxtLogin.Text;
+            string password = TxtPass.Password;
 
             if (string.IsNullOrWhiteSpace(login) || string.IsNullOrWhiteSpace(password))
             {
@@ -30,12 +30,12 @@ namespace ArchiveVSK.Pages
 
             if (!PasswordValidator.IsPasswordValid(password))
             {
-                txtpass.Clear();
-                txtpass.ToolTip = "Пароль не соответствует требованиям";
-                txtpass.Background = Brushes.Red;
+                TxtLogin.Clear();
+                TxtPass.ToolTip = "Пароль не соответствует требованиям";
+                TxtPass.Background = Brushes.Red;
                 MessageBox.Show("Пароль не соответствует требованиям", "Ошибка при авторизации",
                     MessageBoxButton.OK, MessageBoxImage.Error);
-                txtLogin.Background = Brushes.Transparent;
+                TxtLogin.Background = Brushes.Transparent;
                 return;
             }
 
@@ -47,11 +47,11 @@ namespace ArchiveVSK.Pages
 
                     if (user == null || !string.Equals(user.Username, login, StringComparison.Ordinal))
                     {
-                        txtLogin.ToolTip = "Неверный логин";
-                        txtLogin.Background = Brushes.Red;
+                        TxtLogin.ToolTip = "Неверный логин";
+                        TxtLogin.Background = Brushes.Red;
                         MessageBox.Show("Неверный логин", "Ошибка при авторизации",
                             MessageBoxButton.OK, MessageBoxImage.Error);
-                        txtLogin.Background = Brushes.Transparent;
+                        TxtLogin.Background = Brushes.Transparent;
                         return;
                     }
 
@@ -59,18 +59,18 @@ namespace ArchiveVSK.Pages
                     {
                         MessageBox.Show("Вы должны использовать кнопку 'Войти как администратор' для входа", "Ошибка при авторизации",
                             MessageBoxButton.OK, MessageBoxImage.Error);
-                        txtLogin.Background = Brushes.Transparent;
+                        TxtLogin.Background = Brushes.Transparent;
                         return;
                     }
 
                     if (user.Password != password)
                     {
-                        txtpass.Clear();
-                        txtpass.ToolTip = "Неправильный пароль";
-                        txtpass.Background = Brushes.Red;
+                        TxtPass.Clear();
+                        TxtPass.ToolTip = "Неправильный пароль";
+                        TxtPass.Background = Brushes.Red;
                         MessageBox.Show("Неправильный пароль", "Ошибка при авторизации",
                             MessageBoxButton.OK, MessageBoxImage.Error);
-                        txtpass.Background = Brushes.Transparent;
+                        TxtPass.Background = Brushes.Transparent;
                         return;
                     }
 
@@ -90,8 +90,8 @@ namespace ArchiveVSK.Pages
 
         private void BtnEnterAdm_Click(object sender, RoutedEventArgs e)
         {
-            string login = txtLogin.Text;
-            string password = txtpass.Password;
+            string login = TxtLogin.Text;
+            string password = TxtPass.Password;
 
             if (string.IsNullOrWhiteSpace(login) || string.IsNullOrWhiteSpace(password))
             {
@@ -102,12 +102,12 @@ namespace ArchiveVSK.Pages
 
             if (!PasswordValidator.IsPasswordValid(password))
             {
-                txtpass.Clear();
-                txtpass.ToolTip = "Пароль не соответствует требованиям";
-                txtpass.Background = Brushes.Red;
+                TxtPass.Clear();
+                TxtPass.ToolTip = "Пароль не соответствует требованиям";
+                TxtPass.Background = Brushes.Red;
                 MessageBox.Show("Пароль не соответствует требованиям", "Ошибка при авторизации",
                     MessageBoxButton.OK, MessageBoxImage.Error);
-                txtLogin.Background = Brushes.Transparent;
+                TxtLogin.Background = Brushes.Transparent;
                 return;
             }
 
@@ -119,11 +119,11 @@ namespace ArchiveVSK.Pages
 
                     if (user == null || !string.Equals(user.Username, login, StringComparison.Ordinal))
                     {
-                        txtLogin.ToolTip = "Неверный логин";
-                        txtLogin.Background = Brushes.Red;
+                        TxtLogin.ToolTip = "Неверный логин";
+                        TxtLogin.Background = Brushes.Red;
                         MessageBox.Show("Неверный логин", "Ошибка при авторизации",
                             MessageBoxButton.OK, MessageBoxImage.Error);
-                        txtLogin.Background = Brushes.Transparent;
+                        TxtLogin.Background = Brushes.Transparent;
                         return;
                     }
 
@@ -131,18 +131,18 @@ namespace ArchiveVSK.Pages
                     {
                         MessageBox.Show("Вы должны использовать кнопку 'Войти' для входа", "Ошибка при авторизации",
                             MessageBoxButton.OK, MessageBoxImage.Error);
-                        txtLogin.Background = Brushes.Transparent;
+                        TxtLogin.Background = Brushes.Transparent;
                         return;
                     }
 
                     if (user.Password != password)
                     {
-                        txtpass.Clear();
-                        txtpass.ToolTip = "Неправильный пароль";
-                        txtpass.Background = Brushes.Red;
+                        TxtPass.Clear();
+                        TxtPass.ToolTip = "Неправильный пароль";
+                        TxtPass.Background = Brushes.Red;
                         MessageBox.Show("Неправильный пароль", "Ошибка при авторизации",
                             MessageBoxButton.OK, MessageBoxImage.Error);
-                        txtLogin.Background = Brushes.Transparent;
+                        TxtLogin.Background = Brushes.Transparent;
                         return;
                     }
 

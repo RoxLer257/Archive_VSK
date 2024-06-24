@@ -25,18 +25,23 @@
                         <TabItem x:Name="Customers">
                             <TabItem.Header>
                                 <StackPanel>
-                                    <TextBlock Text="Пользователи" FontSize="16" FontWeight="SemiBold"
-                                               Style="{StaticResource WrapText}"/>
+                                    <TextBlock Text="Пользователи" FontSize="16" 
+                                           FontWeight="SemiBold"
+                                           Style="{StaticResource WrapText}"/>
                                 </StackPanel>
                             </TabItem.Header>
                             <TabItem.Content>
                                 <ListView x:Name="LtvUsers" FontSize="14" Margin="3">
                                     <ListView.View>
                                         <GridView>
-                                            <GridViewColumn Header="Айди" DisplayMemberBinding="{Binding UserID}"/>
-                                            <GridViewColumn Header="Логин" DisplayMemberBinding="{Binding Username}"/>
-                                            <GridViewColumn Header="Пароль" DisplayMemberBinding="{Binding Password}"/>
-                                            <GridViewColumn Header="Роль" DisplayMemberBinding="{Binding Roles.RoleName}"/>
+                                            <GridViewColumn Header="Айди" 
+                                                        DisplayMemberBinding="{Binding UserID}"/>
+                                            <GridViewColumn Header="Логин" 
+                                                        DisplayMemberBinding="{Binding Username}"/>
+                                            <GridViewColumn Header="Пароль" 
+                                                        DisplayMemberBinding="{Binding Password}"/>
+                                            <GridViewColumn Header="Роль" 
+                                                        DisplayMemberBinding="{Binding Roles.RoleName}"/>
                                         </GridView>
                                     </ListView.View>
                                 </ListView>
@@ -45,13 +50,15 @@
                         <TabItem x:Name="AddNewUsers">
                             <TabItem.Header>
                                 <StackPanel>
-                                    <TextBlock Text="Создание нового пользователя" FontSize="16" FontWeight="SemiBold"
-                                               Style="{StaticResource WrapText}"/>
+                                    <TextBlock Text="Создание нового пользователя" 
+                                           FontSize="16" FontWeight="SemiBold"
+                                           Style="{StaticResource WrapText}"/>
                                 </StackPanel>
                             </TabItem.Header>
                             <TabItem.Content>
-                                <Grid Background="Transparent" Width="250" HorizontalAlignment="Left"
-                                      x:Name="AddUsers">
+                                <Grid Background="Transparent" Width="250" 
+                                  HorizontalAlignment="Left"
+                                  x:Name="AddUsers">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto"/>
                                         <RowDefinition Height="Auto"/>
@@ -63,17 +70,25 @@
                                         <ColumnDefinition Width="2*"/>
                                     </Grid.ColumnDefinitions>
 
-                                    <TextBlock Text="Логин:" Grid.Row="0" Grid.Column="0" Margin="5 0 5 0" FontSize="14"/>
-                                    <TextBox x:Name="LoginTextBox" Grid.Row="0" Grid.Column="1" FontSize="14"/>
+                                    <TextBlock Text="Логин:" Grid.Row="0" Grid.Column="0" 
+                                           Margin="5 0 5 0" FontSize="14"/>
+                                    <TextBox x:Name="LoginTextBox" Grid.Row="0" 
+                                         Grid.Column="1" FontSize="14"/>
 
-                                    <TextBlock Text="Пароль:" Grid.Row="1" Grid.Column="0" Margin="5 0 5 0" FontSize="14"/>
-                                    <TextBox x:Name="PasswordTextBox" Grid.Row="1" Grid.Column="1" FontSize="14"/>
+                                    <TextBlock Text="Пароль:" Grid.Row="1" Grid.Column="0" 
+                                           Margin="5 0 5 0" FontSize="14"/>
+                                    <TextBox x:Name="PasswordTextBox" Grid.Row="1" 
+                                         Grid.Column="1" FontSize="14"/>
 
-                                    <TextBlock Text="Роль:" Grid.Row="2" Grid.Column="0" Margin="5 0 5 0" FontSize="14"/>
-                                    <ComboBox x:Name="RoleComboBox" Grid.Row="2" Grid.Column="1" DisplayMemberPath="RoleName" FontSize="14"/>
+                                    <TextBlock Text="Роль:" Grid.Row="2" Grid.Column="0" 
+                                           Margin="5 0 5 0" FontSize="14"/>
+                                    <ComboBox x:Name="RoleComboBox" Grid.Row="2" 
+                                          Grid.Column="1" DisplayMemberPath="RoleName" 
+                                          FontSize="14"/>
 
-                                    <Button x:Name="CreateButton" Content="Создать" Grid.Row="3" FontSize="14"
-                                            Grid.Column="1" Margin="0 5 0 0" Click="CreateButton_Click"/>
+                                    <Button x:Name="CreateButton" Content="Создать" 
+                                        Grid.Row="3" FontSize="14" Grid.Column="1" 
+                                        Margin="0 5 0 0" Click="CreateButton_Click"/>
                                 </Grid>
                             </TabItem.Content>
                         </TabItem>
@@ -81,7 +96,8 @@
                 </Grid>
                 <Grid Grid.Column="1">
                     <StackPanel Grid.Column="1" Margin="5">
-                        <Button Name="DelUser" Content="Удаление пользователя" Click="DelUser_Click" Margin="0 0 0 5"/>
+                        <Button Name="DelUser" Content="Удаление пользователя" 
+                            Click="DelUser_Click" Margin="0 0 0 5"/>
                     </StackPanel>
                 </Grid>
             </Grid>
@@ -91,26 +107,29 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" 
-                            HorizontalAlignment="Right" Orientation="Horizontal">
-                    <Button x:Name="PersonalAcc" Click="PersonalAcc_Click"
-                            Margin="10 0 10 10"
-                            Style="{StaticResource AccBtn}">
+                        HorizontalAlignment="Right" Orientation="Horizontal">
+                    <Button x:Name="PersonalAcc" Click="PersonalAcc_Click" 
+                        Margin="10 0 10 10" Style="{StaticResource AccBtn}">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="{Binding Source={x:Static local:CurrentUser.Username}}" VerticalAlignment="Center" HorizontalAlignment="Center"
-                                       Margin="10 0 10 0"/>
-                            <Icon:PackIconMaterial Kind="Account" Style="{StaticResource IconMain}"
-                                                   HorizontalAlignment="Right"/>
+                            <TextBlock Text="{Binding Source={x:Static local:CurrentUser.Username}}" 
+                                   VerticalAlignment="Center" HorizontalAlignment="Center" 
+                                   Margin="10 0 10 0"/>
+                            <Icon:PackIconMaterial Kind="Account" 
+                                               Style="{StaticResource IconMain}" 
+                                               HorizontalAlignment="Right"/>
                         </StackPanel>
                     </Button>
 
-                    <Button x:Name="ExtAcc" Click="ExtAcc_Click"
-                            Margin="10 0 10 10" Style="{StaticResource AccBtn}">
+                    <Button x:Name="ExtAcc" Click="ExtAcc_Click" 
+                        Margin="10 0 10 10" Style="{StaticResource AccBtn}">
                         <StackPanel Orientation="Horizontal">
-                            <Icon:PackIconMaterial Kind="ExitToApp" Style="{StaticResource IconMain}"/>
+                            <Icon:PackIconMaterial Kind="ExitToApp" 
+                                               Style="{StaticResource IconMain}"/>
                         </StackPanel>
                     </Button>
                 </StackPanel>
             </Grid>
         </Grid>
     </Border>
+
 </Page>

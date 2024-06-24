@@ -18,12 +18,12 @@ namespace ArchiveVSK
         {
             BackgroundWorker worker = new BackgroundWorker();
             worker.WorkerReportsProgress = true;
-            worker.DoWork += worker_DoWork;
-            worker.ProgressChanged += worker_ProgressChanged;
+            worker.DoWork += Worker_DoWork;
+            worker.ProgressChanged += Worker_ProgressChanged;
             worker.RunWorkerAsync();
         }
 
-        void worker_DoWork(object sender, DoWorkEventArgs e)
+        void Worker_DoWork(object sender, DoWorkEventArgs e)
         {
             for (int i = 0; i <= 70; i++)
             {
@@ -32,11 +32,11 @@ namespace ArchiveVSK
             }
         }
 
-        void worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        void Worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            progressBar.Value = e.ProgressPercentage;
+            ProgressBar.Value = e.ProgressPercentage;
 
-            if (progressBar.Value == 70)
+            if (ProgressBar.Value == 70)
             {
                 MainWindow mainWindow = new MainWindow();
                 Close();
