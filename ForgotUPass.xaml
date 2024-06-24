@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:ArchiveVSK"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Height="200" Width="400">
+        Height="200" Width="400"
+        Icon="Images/VSKLogo.png">
     
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BoolToVis"/>
